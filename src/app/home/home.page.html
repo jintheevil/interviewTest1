@@ -1,20 +1,31 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border">
+  <div style="width: 100%; background: #FAF0E6; text-align: center; padding: 16px 0px;">
+    <div class="header">BookKeeper</div>
+  </div>
+  <div style="width: 100%; display: flex; align-items: center; justify-content: center; padding: 16px 30vw; background: #FAF0E6">
+    <ion-input class="searchbar" type="text" placeholder="Search">
+      <ion-icon style="margin-left: 8px; font-size: 16px;" slot="start" name="search-outline"></ion-icon>
+    </ion-input>
+  </div>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content style="--background: #FAF0E6; position: relative">
+  <div style="width: 100%; padding: 16px">
+    <div style="width: 200px; background: #D8D2C1; border-radius: 16px;">
+      <img style="width: 100%; height: auto" src="" alt="">
+      <div style="padding: 16px">
+        <div style="font-size: 17px; margin-bottom: 4px">Title</div>
+        <div style="font-size: 15px; margin-bottom: 8px">Pages read / Pages total</div>
+        <div>
+          <div style="height: 40px; width: 40px; border-radius: 50%; background: #7FD1AE; display: flex; align-items: center; justify-content: center; margin-left: auto">
+            <ion-icon style="font-size: 24px; color: #fafafa" slot="start" name="create-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div [ngClass]="platform.width() > 768 ? 'addBookLarge' : 'addBook'">
+    <ion-icon style="font-size: 32px;" slot="start" name="add-outline"></ion-icon>
   </div>
 </ion-content>
